@@ -4,5 +4,5 @@
 
 ## Docker启动
 ```
-docker run -d --name tz -p 80:80 malaohu/php-yahei-tz
+docker run -d --name tz -p 80:80 -p 443:443 qingyuan0o0/php-test-tz
 ```
