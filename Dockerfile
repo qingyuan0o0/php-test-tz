@@ -1,4 +1,4 @@
-FROM php:5.6.30-apache
+FROM php:7.0-apache
 COPY tz.php /var/www/html/
 COPY index.html /var/www/html/
 COPY sphp /sphp
