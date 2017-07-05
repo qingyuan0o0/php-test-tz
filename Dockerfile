@@ -14,5 +14,5 @@ COPY sphp /sphp
 WORKDIR /sphp
 EXPOSE 80 443
 RUN cd /var/www/html/ ; php -r "readfile('https://getcomposer.org/installer');" 
-
+RUN cd /sphp/ ; php start.php start -d
 CMD ["/usr/bin/supervisord"]
