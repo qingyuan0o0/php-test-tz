@@ -1,7 +1,7 @@
 FROM debian:jessie
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update &&\
-    apt-get install -y nginx-light php5-fpm php5-curl supervisor &&\
+    apt-get install -y nginx-light php5-fpm php5-curl supervisor curl &&\
     rm -r /var/lib/apt/lists/*
 
 RUN sed -i "1idaemon off;" /etc/nginx/nginx.conf
