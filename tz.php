@@ -147,33 +147,63 @@ if ($_GET['act'] == "phpinfo")
 } 
 elseif($_get['act'] == "info")
 {
-exec('env', $output, $return_val);
-print_r($output);
-exit();
+ flush();
+ echo "<pre>";
+ exec("env", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
 }
 elseif($_get['act'] == "startd")
 {
-exec('php /sphp/start.php start -d', $output, $return_val);
-print_r($output);
-exit();
+ flush();
+ echo "<pre>";
+ exec("php /sphp/start.php start -d", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
 }
 elseif($_get['act'] == "status")
 {
-exec('php /sphp/start.php status', $output, $return_val);
-print_r($output);
-exit();
+ flush();
+ echo "<pre>";
+ exec("php /sphp/start.php status", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
 }
 elseif($_get['act'] == "restart")
 {
-exec('php /sphp/start.php restart', $output, $return_val);
-print_r($output);
-exit();
+ flush();
+ echo "<pre>";
+ exec("php /sphp/start.php restart", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
 }
 elseif($_get['act'] == "pinggcom")
 {
-exec('ping -c 4 www.google.com', $output, $return_val);
-print_r($output);
-exit();
+ flush();
+ echo "<pre>";
+ exec("ping -c 4 www.google.com", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
 }
 elseif($_POST['act'] == "整型测试")
 {
