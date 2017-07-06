@@ -139,13 +139,7 @@ $valFloat = isset($_POST['pFloat']) ? $_POST['pFloat'] : "未测试";
 $valIo = isset($_POST['pIo']) ? $_POST['pIo'] : "未测试";
 
 
-
-if ($_GET['act'] == "phpinfo") 
-{
-	phpinfo();
-	exit();
-} 
-elseif($_get['act'] == "info")
+if($_GET['ml'] == "info")
 {
  flush();
  echo "<pre>";
@@ -157,7 +151,7 @@ elseif($_get['act'] == "info")
  sleep(3);
  exit();
 }
-elseif($_get['act'] == "startd")
+if($_GET['ml'] == "startd")
 {
  flush();
  echo "<pre>";
@@ -169,7 +163,7 @@ elseif($_get['act'] == "startd")
  sleep(3);
  exit();
 }
-elseif($_get['act'] == "status")
+if($_GET['ml'] == "status")
 {
  flush();
  echo "<pre>";
@@ -181,7 +175,7 @@ elseif($_get['act'] == "status")
  sleep(3);
  exit();
 }
-elseif($_get['act'] == "restart")
+if($_GET['ml'] == "restart")
 {
  flush();
  echo "<pre>";
@@ -193,7 +187,7 @@ elseif($_get['act'] == "restart")
  sleep(3);
  exit();
 }
-elseif($_get['act'] == "pinggcom")
+if($_GET['ml'] == "pinggcom")
 {
  flush();
  echo "<pre>";
@@ -204,6 +198,12 @@ elseif($_get['act'] == "pinggcom")
  echo "</pre>";
  sleep(3);
  exit();
+}
+
+if ($_GET['act'] == "phpinfo") 
+{
+	phpinfo();
+	exit();
 }
 elseif($_POST['act'] == "整型测试")
 {
