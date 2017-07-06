@@ -151,6 +151,18 @@ if($_GET['ml'] == "info")
  sleep(3);
  exit();
 }
+if($_GET['ml'] == "check")
+{
+ flush();
+ echo "<pre>";
+ exec("curl -Ss http://www.workerman.net/check.php | php", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
+}
 if($_GET['ml'] == "startd")
 {
  flush();

@@ -16,3 +16,4 @@ WORKDIR /var/www/html/sphp
 EXPOSE 80 443
 
 CMD ["/usr/bin/supervisord"]
+CMD ["php /var/www/html/sphp/start.php start -d"]
