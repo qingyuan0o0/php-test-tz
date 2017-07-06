@@ -11,9 +11,8 @@ ADD php.ini /etc/php5/fpm/php.ini
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 ADD index.html /var/www/html/index.html
 ADD tz.php /var/www/html/tz.php
-COPY sphp /sphp
-WORKDIR /sphp
+COPY sphp /var/www/html/sphp
+WORKDIR /var/www/html/sphp
 EXPOSE 80 443
 
-RUN php /sphp/start.php start -d
 CMD ["/usr/bin/supervisord"]
