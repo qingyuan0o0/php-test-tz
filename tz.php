@@ -148,27 +148,32 @@ if ($_GET['act'] == "phpinfo")
 elseif($_POST['act'] == "info")
 {
 exec('env', $output, $return_val);
-print_r($output); 
+print_r($output);
+exit();
 }
 elseif($_POST['act'] == "startd")
 {
 exec('php /sphp/start.php start -d', $output, $return_val);
-print_r($output); 
+print_r($output);
+exit();
 }
 elseif($_POST['act'] == "status")
 {
 exec('php /sphp/start.php status', $output, $return_val);
-print_r($output); 
+print_r($output);
+exit();
 }
 elseif($_POST['act'] == "restart")
 {
 exec('php /sphp/start.php restart', $output, $return_val);
-print_r($output); 
+print_r($output);
+exit();
 }
 elseif($_POST['act'] == "pinggoo")
 {
 exec('ping -c 4 www.google.com', $output, $return_val);
-print_r($output); 
+print_r($output);
+exit();
 }
 elseif($_POST['act'] == "整型测试")
 {
