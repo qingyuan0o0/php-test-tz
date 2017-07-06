@@ -167,7 +167,7 @@ if($_GET['ml'] == "startd")
 {
  flush();
  echo "<pre>";
- exec("php /var/www/html/sphp/start.php start -d", $list);
+ exec("php /sphp/start.php start -d", $list);
  for($i=0;$i<count($list);$i++){
   print $list[$i]."\n";
  }
@@ -179,7 +179,7 @@ if($_GET['ml'] == "status")
 {
  flush();
  echo "<pre>";
- exec("php /var/www/html/sphp/start.php status", $list);
+ exec("php /sphp/start.php status", $list);
  for($i=0;$i<count($list);$i++){
   print $list[$i]."\n";
  }
@@ -191,7 +191,7 @@ if($_GET['ml'] == "restart")
 {
  flush();
  echo "<pre>";
- exec("php /var/www/html/sphp/start.php restart", $list);
+ exec("php /sphp/start.php restart", $list);
  for($i=0;$i<count($list);$i++){
   print $list[$i]."\n";
  }
