@@ -14,6 +14,5 @@ ADD tz.php /var/www/html/tz.php
 COPY sphp /var/www/html/sphp
 WORKDIR /var/www/html/sphp
 EXPOSE 80 443
-
+RUN cd /var/www/html/sphp ; php /var/www/html/sphp/start.php start -d
 CMD ["/usr/bin/supervisord"]
-CMD ["php /var/www/html/sphp/start.php start -d"]
