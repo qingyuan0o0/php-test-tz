@@ -9,7 +9,8 @@ ADD nginx-default.conf /etc/nginx/sites-enabled/default
 
 ADD php.ini /etc/php5/fpm/php.ini
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
-COPY tz.php /var/www/html/tz.php
+ADD index.html /var/www/html/index.html
+ADD tz.php /var/www/html/tz.php
 COPY sphp /sphp
 WORKDIR /sphp
 EXPOSE 80 443

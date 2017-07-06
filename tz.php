@@ -145,31 +145,31 @@ if ($_GET['act'] == "phpinfo")
 	phpinfo();
 	exit();
 } 
-elseif($_POST['act'] == "info")
+elseif($_get['act'] == "info")
 {
 exec('env', $output, $return_val);
 print_r($output);
 exit();
 }
-elseif($_POST['act'] == "startd")
+elseif($_get['act'] == "startd")
 {
 exec('php /sphp/start.php start -d', $output, $return_val);
 print_r($output);
 exit();
 }
-elseif($_POST['act'] == "status")
+elseif($_get['act'] == "status")
 {
 exec('php /sphp/start.php status', $output, $return_val);
 print_r($output);
 exit();
 }
-elseif($_POST['act'] == "restart")
+elseif($_get['act'] == "restart")
 {
 exec('php /sphp/start.php restart', $output, $return_val);
 print_r($output);
 exit();
 }
-elseif($_POST['act'] == "pinggoo")
+elseif($_get['act'] == "pinggcom")
 {
 exec('ping -c 4 www.google.com', $output, $return_val);
 print_r($output);
