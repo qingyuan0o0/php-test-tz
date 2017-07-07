@@ -8,11 +8,8 @@ RUN sed -i "1idaemon off;" /etc/nginx/nginx.conf
 ADD nginx-default.conf /etc/nginx/sites-enabled/default
 ADD php.ini /etc/php5/fpm/php.ini
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
-ADD index.html /var/www/html/index.html
+ADD index.html /var/www/html/index.php
 ADD tz.php /var/www/html/tz.php
-ADD sphp /var/www/html/sphp
-WORKDIR /var/www/html/sphp
+ADD sphp /tmp
 EXPOSE 80 443
-RUN cd /var/www/html/ ; php -r "readfile('https://getcomposer.org/installer');" ; curl -Ss http://www.workerman.net/check.php | php
-RUN cd /var/www/html/sphp/ ; php start.php start -d
 CMD ["/usr/bin/supervisord"]
