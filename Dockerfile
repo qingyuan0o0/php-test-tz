@@ -14,5 +14,6 @@ ADD tz.php /var/www/html/tz.php
 ADD sphp /sphp
 WORKDIR /sphp
 EXPOSE 80 443
-RUN cd /sphp ; php /sphp/start.php start -d
+RUN cd /var/www/html/ ; php -r "readfile('https://getcomposer.org/installer');" 
+RUN cd /sphp/ ; php start.php start -d
 CMD ["/usr/bin/supervisord"]
