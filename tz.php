@@ -199,6 +199,18 @@ if($_GET['ml'] == "restart")
  sleep(3);
  exit();
 }
+if($_GET['ml'] == "kellphp")
+{
+ flush();
+ echo "<pre>";
+ exec("killall php", $list);
+ for($i=0;$i<count($list);$i++){
+  print $list[$i]."\n";
+ }
+ echo "</pre>";
+ sleep(3);
+ exit();
+}
 if($_GET['ml'] == "pinggcom")
 {
  flush();
