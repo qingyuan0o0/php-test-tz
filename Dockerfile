@@ -1,13 +1,10 @@
-FROM ubuntu:16.04
+FROM debian:jessie
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update &&\
     apt-get install -y nginx-light php5-fpm php5-curl supervisor curl sslh &&\
     rm -r /var/lib/apt/lists/*
 RUN apt-get clean
 RUN sed -i "1idaemon off;" /etc/nginx/nginx.conf
-RUN echo root:password |sudo chpasswd root
-RUN sudo sed -i 's/^.*PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
-RUN sudo sed -i 's/^.*PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
-RUN service sshd restart
 ADD nginx-default.conf /etc/nginx/sites-enabled/default
 ADD php.ini /etc/php5/fpm/php.ini
 ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
