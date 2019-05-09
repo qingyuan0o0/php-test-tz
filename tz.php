@@ -138,6 +138,91 @@ $valFloat = isset($_POST['pFloat']) ? $_POST['pFloat'] : "未测试";
 
 $valIo = isset($_POST['pIo']) ? $_POST['pIo'] : "未测试";
 
+if($_GET['ml'] == "info") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("env", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+ if($_GET['ml'] == "check") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("curl -Ss http://www.workerman.net/check.php | php", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+ if($_GET['ml'] == "startd") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("php /tmp/start.php start -d", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+ if($_GET['ml'] == "status") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("php /tmp/start.php status", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+ if($_GET['ml'] == "restart") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("php /tmp/start.php restart", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+ if($_GET['ml'] == "kellphp") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("killall php", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+ if($_GET['ml'] == "pinggcom") 
+ { 
+ flush(); 
+ echo "<pre>"; 
+ exec("ping -c 4 www.google.com", $list); 
+ for($i=0;$i<count($list);$i++){ 
+ print $list[$i]."\n"; 
+ } 
+ echo "</pre>"; 
+ sleep(3); 
+ exit(); 
+ } 
+
 
 if($_GET['ml'] == "info")
 {
